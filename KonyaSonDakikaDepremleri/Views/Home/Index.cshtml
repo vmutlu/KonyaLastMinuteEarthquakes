@@ -1,0 +1,39 @@
+﻿@model DepremClass
+@{
+    ViewData["Title"] = "Home Page";
+}
+<center>
+    <h3 style="color:red;">Konya Şehrinde Meydana Gelen Depremler</h3><br />
+</center>
+
+<center>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Yer</th>
+                    <th>Enlem (N)</th>
+                    <th>Boylam (E)</th>
+                    <th>Derinlik (km)</th>
+                    <th>Şiddet</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.depremler)
+                {
+                    <tr>
+                        <td>@item.Tarih</td>
+                        <td>@item.Saat</td>
+                        <td>@item.Yer</td>
+                        <td>@item.Enlem</td>
+                        <td>@item.Boylam</td>
+                        <td>@item.Derinlik</td>
+                        <td>@item.Buyukluk.ML</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</center>
